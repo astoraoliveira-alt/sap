@@ -131,7 +131,7 @@ export const AGBarChart = ({ data, xKey, yKey, height = 300, onBarClick, activeK
                     <Bar
                         dataKey={yKey}
                         radius={[4, 4, 0, 0]}
-                        onClick={onBarClick ? (data: any) => onBarClick(data) : undefined}
+                        onClick={onBarClick ? (data: any) => onBarClick(data?.payload || data) : undefined}
                         cursor={onBarClick ? 'pointer' : 'default'}
                     >
                         <LabelList dataKey={yKey} content={renderCustomBarLabel} />
