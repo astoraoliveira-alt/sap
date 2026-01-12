@@ -174,7 +174,15 @@ export const AGAreaChart = ({ data, xKey, yKey, height = 250, onDotClick }: any)
     return (
         <div style={{ height }} className="w-full">
             <ResponsiveContainer width="100%" height="100%">
-                <AreaChart data={data} margin={{ top: 20, right: 10, left: -20, bottom: 0 }}>
+                <AreaChart
+                    data={data}
+                    margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
+                    onClick={(data: any) => {
+                        if (onDotClick && data && data.activePayload && data.activePayload.length > 0) {
+                            onDotClick(data.activePayload[0].payload);
+                        }
+                    }}
+                >
                     <defs>
                         <linearGradient id="colorSize" x1="0" y1="0" x2="0" y2="1">
                             <stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
@@ -208,7 +216,7 @@ export const AGAreaChart = ({ data, xKey, yKey, height = 250, onDotClick }: any)
                         fillOpacity={1}
                         fill="url(#colorSize)"
                         strokeWidth={2}
-                        activeDot={{ r: 6, strokeWidth: 0, fill: "hsl(var(--foreground))", cursor: 'pointer', onClick: (props: any) => onDotClick && onDotClick(props.payload) }}
+                        activeDot={{ r: 6, strokeWidth: 0, fill: "hsl(var(--foreground))", cursor: 'pointer', onClick: (props: any) => onDotClick && onDotClick(props.payload || props) }}
                     >
                         <LabelList dataKey={yKey} content={renderCustomAreaLabel} />
                     </Area>
