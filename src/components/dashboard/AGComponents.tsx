@@ -125,12 +125,13 @@ export const AGBarChart = ({ data, xKey, yKey, height = 300, onBarClick, activeK
                             borderRadius: '8px',
                             color: 'hsl(var(--foreground))'
                         }}
+                        itemStyle={{ color: 'hsl(var(--foreground))' }}
                         formatter={(value: number) => [`${(value / 1024).toFixed(2)} MB`, 'Size']}
                     />
                     <Bar
                         dataKey={yKey}
                         radius={[4, 4, 0, 0]}
-                        onClick={onBarClick ? (data) => onBarClick(data.activePayload?.[0]?.payload) : undefined}
+                        onClick={onBarClick ? (data: any) => onBarClick(data) : undefined}
                         cursor={onBarClick ? 'pointer' : 'default'}
                     >
                         <LabelList dataKey={yKey} content={renderCustomBarLabel} />
