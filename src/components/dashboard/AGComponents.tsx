@@ -176,7 +176,7 @@ export const AGAreaChart = ({ data, xKey, yKey, height = 250, onDotClick }: any)
             <ResponsiveContainer width="100%" height="100%">
                 <AreaChart
                     data={data}
-                    margin={{ top: 20, right: 10, left: -20, bottom: 0 }}
+                    margin={{ top: 20, right: 10, left: 0, bottom: 0 }}
                     onClick={(data: any) => {
                         if (onDotClick && data && data.activePayload && data.activePayload.length > 0) {
                             onDotClick(data.activePayload[0].payload);
