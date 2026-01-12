@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState } from 'react';
 import { Header } from './components/layout/Header';
 import { AGStatCard, AGBarChart, AGAreaChart, AGSidePanel } from './components/dashboard/AGComponents';
 import { MOCK_DATA, TOTAL_SUMMARY, generateFilesForMonth, type YearData, type MonthData, type SapFile } from './data/mock';

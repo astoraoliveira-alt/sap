@@ -1,4 +1,4 @@
-import { Database, Search, Settings, Globe } from "lucide-react";
+import { Database, Search, Settings } from "lucide-react";
 import { useLanguage } from "../../contexts/LanguageContext";
 
 export const Header = () => {

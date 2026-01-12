@@ -207,7 +207,7 @@ export const AGAreaChart = ({ data, xKey, yKey, height = 250, onDotClick }: any)
                         fillOpacity={1}
                         fill="url(#colorSize)"
                         strokeWidth={2}
-                        activeDot={{ r: 6, strokeWidth: 0, fill: "hsl(var(--foreground))", cursor: 'pointer', onClick: (_, e) => onDotClick && onDotClick(e.payload) }}
+                        activeDot={{ r: 6, strokeWidth: 0, fill: "hsl(var(--foreground))", cursor: 'pointer', onClick: (props: any) => onDotClick && onDotClick(props.payload) }}
                     >
                         <LabelList dataKey={yKey} content={renderCustomAreaLabel} />
                     </Area>
