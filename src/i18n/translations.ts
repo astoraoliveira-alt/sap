@@ -42,7 +42,12 @@ export const translations = {
         systemId: "System ID",
         sapRouter: "SAProuter String",
         save: "Save",
-        cancel: "Cancel"
+        cancel: "Cancel",
+        fileDistributionReportTitle: "File Quantity Analysis by Type per Year",
+        exerciseExtension: "Exercise / Extension",
+        quantityFiles: "Qtd Files",
+        sizeMB: "Size (MB)",
+        sizeGB: "Size (GB)"
     },
     'pt-BR': {
         appTitle: "Davos - Assessment de Storage SAP",
@@ -85,6 +90,11 @@ export const translations = {
         systemId: "ID sist.",
         sapRouter: "Cadeia de SAProuter",
         save: "Salvar",
-        cancel: "Cancelar"
+        cancel: "Cancelar",
+        fileDistributionReportTitle: "Análise Quantidade de Tipo de Arquivo por Ano",
+        exerciseExtension: "Exercício / Extensão",
+        quantityFiles: "Qtd Files",
+        sizeMB: "Qtd em MB",
+        sizeGB: "Qtd em GB"
     }
 };

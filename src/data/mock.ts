@@ -15,11 +15,18 @@ export interface MonthData {
     totalSize: number;
 }
 
+export interface FileTypeStats {
+    type: string;
+    count: number;
+    size: number;
+}
+
 export interface YearData {
     year: number;
     fileCount: number;
     totalSize: number;
     months: MonthData[];
+    fileTypeDistribution: FileTypeStats[];
 }
 
 // Helpers
@@ -35,7 +42,7 @@ export const formatBytes = (bytes: number, decimals = 2) => {
 
 // Generation
 const YEARS = [2021, 2022, 2023, 2024, 2025];
-const FILE_TYPES = ['PDF', 'PDF', 'PDF', 'JPG', 'XLSX', 'DOCX'];
+const FILE_TYPES = ['PDF', 'JPG', 'XLSX', 'DOCX', 'MSG', 'TXT', 'ZIP'];
 const SAP_TABLES = ['BKPF', 'BSEG', 'MARA', 'KNA1', 'LFA1'];
 
 export const generateMockData = (): YearData[] => {
@@ -56,11 +63,25 @@ export const generateMockData = (): YearData[] => {
         const yearlyTotalFiles = months.reduce((acc, curr) => acc + curr.fileCount, 0);
         const yearlyTotalSize = months.reduce((acc, curr) => acc + curr.totalSize, 0);
 
+        // Generate distribution based on total files
+        const fileTypeDistribution: FileTypeStats[] = FILE_TYPES.map(type => {
+            // Rough random distribution
+            const typeCount = Math.floor(yearlyTotalFiles * (Math.random() * 0.3)); // up to 30% per type
+            const typeSize = typeCount * getRandomInt(50000, 5000000);
+            return {
+                type,
+                count: typeCount,
+                size: typeSize
+            };
+        }).sort((a, b) => b.size - a.size);
+
+
         return {
             year,
             fileCount: yearlyTotalFiles,
             totalSize: yearlyTotalSize,
-            months
+            months,
+            fileTypeDistribution
         };
     });
 };

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Header } from './components/layout/Header';
 import { AGStatCard, AGBarChart, AGAreaChart, AGSidePanel } from './components/dashboard/AGComponents';
+import { FileDistributionReport } from './components/dashboard/FileDistributionReport';
 import { MOCK_DATA, TOTAL_SUMMARY, generateFilesForMonth, type YearData, type MonthData, type SapFile } from './data/mock';
 import { HardDrive, FileText, Calendar, ArrowLeft, FileCode, Database, Clock, X, File as FileIcon, BarChart as BarChartIcon, Activity } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -145,6 +146,10 @@ function App() {
                     </CardContent>
                   </Card>
                 </div>
+              </div>
+
+              <div className="grid grid-cols-1 gap-8">
+                <FileDistributionReport data={MOCK_DATA} />
               </div>
             </motion.div>
           ) : (
