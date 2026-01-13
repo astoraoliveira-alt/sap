@@ -34,7 +34,15 @@ export const translations = {
         active: "Active",
         previewUnavailable: "Preview Unavailable (Mock Data)",
         close: "Close",
-        download: "Download"
+        download: "Download",
+        settingsTitle: "System Connection Parameter",
+        description: "Description",
+        appServer: "Application Server",
+        instanceNo: "Instance No",
+        systemId: "System ID",
+        sapRouter: "SAProuter String",
+        save: "Save",
+        cancel: "Cancel"
     },
     'pt-BR': {
         appTitle: "Davos - Assessment de Storage SAP",
@@ -69,6 +77,14 @@ export const translations = {
         active: "Ativo",
         previewUnavailable: "Pré-visualização Indisponível (Dados Mock)",
         close: "Fechar",
-        download: "Baixar"
+        download: "Baixar",
+        settingsTitle: "Parâmetro ligação ao sistema",
+        description: "Descrição",
+        appServer: "Servidor de aplicação",
+        instanceNo: "Nº da instância",
+        systemId: "ID sist.",
+        sapRouter: "Cadeia de SAProuter",
+        save: "Salvar",
+        cancel: "Cancelar"
     }
 };
